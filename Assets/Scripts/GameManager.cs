@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,6 +11,9 @@ public class GameManager : MonoBehaviour
     public float initialGameSpeed = 5f;
     public float gameSpeedIncrease = 0.1f;
     public float gameSpeed { get; private set; }
+
+    public TextMeshProUGUI gameOverText;
+    public Button retryButton;
 
     private Player player;
     private Spawner spawner;
@@ -56,6 +61,8 @@ public class GameManager : MonoBehaviour
 
         player.gameObject.SetActive(true);
         spawner.gameObject.SetActive(true);
+        gameOverText.gameObject.SetActive(false);
+        retryButton.gameObject.SetActive(false);
     }
 
     public void GameOver()
@@ -65,6 +72,8 @@ public class GameManager : MonoBehaviour
 
         player.gameObject.SetActive(false);
         spawner.gameObject.SetActive(false);
+        gameOverText.gameObject.SetActive(true);
+        retryButton.gameObject.SetActive(true);
     }
 
     private void Update()
