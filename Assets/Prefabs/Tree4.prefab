@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 943956769144612327}
   - component: {fileID: 2923731996259974825}
   - component: {fileID: 8706349868472484488}
+  - component: {fileID: 8623349470062865513}
   m_Layer: 0
   m_Name: Tree4
   m_TagString: Obstacle
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7178638677894202424}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.2130165, y: -1.197961, z: 0}
+  m_LocalPosition: {x: 0, y: 0.15, z: 0}
   m_LocalScale: {x: 0.18, y: 0.15, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -106,3 +107,15 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5.135417, y: 9.666667, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8623349470062865513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7178638677894202424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a4e0065f7790cd4e8b96c514d7ce1b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
