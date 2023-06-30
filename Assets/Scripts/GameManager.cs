@@ -59,6 +59,7 @@ public class GameManager : MonoBehaviour
             Destroy(obstacle.gameObject);
         }
 
+        score = 0f;
         gameSpeed = initialGameSpeed;
         enabled = true;
 
@@ -66,6 +67,8 @@ public class GameManager : MonoBehaviour
         spawner.gameObject.SetActive(true);
         gameOverText.gameObject.SetActive(false);
         retryButton.gameObject.SetActive(false);
+
+        UpdateHiscore();
     }
 
     public void GameOver()
@@ -77,6 +80,8 @@ public class GameManager : MonoBehaviour
         spawner.gameObject.SetActive(false);
         gameOverText.gameObject.SetActive(true);
         retryButton.gameObject.SetActive(true);
+
+        UpdateHiscore();
     }
 
     private void Update()
@@ -87,5 +92,18 @@ public class GameManager : MonoBehaviour
 
     }
 
-    
+    private void UpdateHiscore()
+    {
+        float hiscore = PlayerPrefs.GetFloat("hiscore", 0);
+
+        if (score > hiscore)
+        {
+            hiscore = score;
+            PlayerPrefs.SetFloat("hiscore", hiscore);
+        }
+
+        hiscoreText.text = Mathf.FloorToInt(hiscore).ToString("D5");
+    }
+
+
 }
